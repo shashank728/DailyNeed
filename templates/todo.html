@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+Todo list
+{% endblock  %}
+
+{% block link %}
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="{% static 'css/todo.css' %}">
+{% endblock  %}
+
+
+{% block body %}
+
+<table class="table container table-dark table-striped">
+    <thead>
+
+      <tr>
+        <th scope="col">No.</th>
+        <th scope="col">Saman</th>
+        <th scope="col">Amount</th>
+        <th scope="col">Action</th>
+      </tr>
+      
+    </thead>
+    <tbody>
+      {% for todo in todos %}
+      <tr>
+        
+        <th scope="row">{{ forloop.counter }}</th>
+        <td>{{ todo.task }}</td>
+        <td>{{ todo.quantity }}</td>
+        <td>     
+          <a href="{% url 'complete' todo.id %}"  class="btn btn-success">Complete</a>
+          <a href="{% url 'delete' todo.id %}" class="btn btn-danger">Delete</a>
+          <a href="{% url 'update' todo.id %}" type="button" class="btn btn-warning">Update</a>             
+        </td>
+      </tr>
+      {% endfor %}
+    
+    </tbody>
+  </table>
+
+  <div class="container-fluid text-center mt-5">
+    <a href="{% url 'addtodo' %}" class="btn btn-outline-primary">Add Task</a>
+  </div>
+
+
+<h3 class="container text-center mt-5 mb-3">Completed Task ({{ completed.count }})</h3>
+
+
+<table class="table container table-dark table-striped">
+  <thead>
+
+    <tr>
+      <th scope="col">No.</th>
+      <th scope="col">Saman</th>
+      <th scope="col">Amount</th>
+      <th scope="col">Action</th>
+    </tr>
+    
+  </thead>
+  <tbody>
+    {% for todo in completed %}
+    <tr>
+      
+      <th scope="row">{{ forloop.counter }}</th>
+      <td>{{ todo.task }}</td>
+      <td>{{ todo.quantity }}</td>
+      <td>           
+        <a href="{% url 'delete' todo.id %}" class="btn btn-outline-danger">Delete</a>            
+      </td>
+    </tr>
+    {% endfor %}
+  
+  </tbody>
+</table>
+
+{% endblock  %}

@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+home
+{% endblock  %}
+
+
+{% block link %}
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="{% static "css/base.css" %}">
+{% endblock  %}
+
+
+{% block body %}
+    
+        <!-- About Section -->
+        <div id="about" class="text-center mt-5">
+            <div class="container">
+                <h2>Taskify</h2>
+                <p class="lead">Taskify is designed to help you manage your daily tasks efficiently. </p>
+            </div>
+        </div>
+        
+        <!-- Hero Section -->
+        <div class="hero-section">
+            <h1>Welcome to Taskify</h1>
+            <p>Your Ultimate To-Do App to Boost Productivity</p>
+            <a href="{% url 'login' %}" class="btn btn-primary btn-lg">Start</a>
+        </div>
+        
+{% endblock  %}

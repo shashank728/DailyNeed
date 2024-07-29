@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+Add task
+{% endblock  %}
+
+{% block link %}
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'css/addtodo.css' %}">
+{% endblock  %}
+
+
+{% block body %}
+
+   <!-- Main Content -->
+   <div class="container mt-5">
+    <div class="row">
+        <div class="col-12">
+            <h2>Create a New Task</h2>
+
+            <hr>
+            <form method="post">
+                {% csrf_token %}
+                <div class="container text-center">
+
+                    <div class="form-group">
+                        <label for="taskName">Saman</label>
+                        <input type="text" class="form-control" id="taskName" name="task" placeholder="Enter task">
+                    </div>
+                    <div class="form-group">
+                        <label for="task">Quantity</label>
+                        <input type="number"  name="quantity" class="form-control" id="taskDate"  placeholder="Amount">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock  %}

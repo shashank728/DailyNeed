@@ -1,0 +1,28 @@
+
+body {
+
+    font-family: 'Arial', sans-serif;
+
+}
+.navbar {
+    margin-bottom: 20px;
+}
+
+.hero-section {
+    background: linear-gradient(pink,red);
+    background-size: cover;
+    height: 56vh;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer {
+    background: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}

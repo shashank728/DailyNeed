@@ -1,0 +1,28 @@
+
+body {
+
+    font-family: 'Arial', sans-serif;
+    background-color: pink;
+}
+.navbar {
+    margin-bottom: 20px;
+}
+
+.hero-section {
+    background: url('https://source.unsplash.com/1600x900/?productivity') no-repeat center center;
+    background-size: cover;
+    height: 56vh;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer {
+    background: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}

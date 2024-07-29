@@ -1,0 +1,21 @@
+
+body {
+
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(voilet , yellow);
+}
+.navbar {
+    margin-bottom: 20px;
+}
+
+
+
+footer {
+    background: #333;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 1rem 0;
+}
