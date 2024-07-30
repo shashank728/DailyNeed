@@ -12,9 +12,10 @@ urlpatterns = [
     path("todo",views.todo,name="todo"),
     path('addtodo/',views.addtodo,name="addtodo"),
     
+    path('creat_profile_form',views.creat_profile,name="creatprofile"),
     path('profile/',views.profile,name="profile"),
+    path('update_profile_form/<int:info_id>',views.update_profile_form,name="update_profile_form"),
     
-    path('profile_form/<int:info_id>',views.profile_form,name="profile_form"),
     path('delete_todo/<int:todo_id>',views.delete,name="delete"),
     path('update_todo/<int:todo_id>',views.update,name="update"),
     path('complete/<int:todo_id>',views.complete,name="complete"),

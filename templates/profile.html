@@ -26,10 +26,14 @@ profile
                 </div>
                 
                 <div class="container">
-                    <a class="btn btn-warning m-3" href="{% url 'profile_form' info.id %}">Edit Profile</a>
+                    <a class="btn btn-warning m-3" href="{% url 'update_profile_form' info.id %}">Edit Profile</a>
                 </div>
             </div>
             {% endfor %}
+
+            <div class="container">
+                <a class="btn btn-warning m-3" href="{% url 'creatprofile' %}">Creat profile</a>
+            </div>
 
         </div>
         

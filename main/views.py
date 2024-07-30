@@ -39,31 +39,45 @@ def addtodo(request):
     
     return render(request,"addtodo.html")
 
+# ======================== creat profile form ==============================
 
-
-# ======================== profile form ==============================
-
-def profile_form(request,info_id):
-    
-
-    
+def creat_profile(request):
     
     if request.method == "POST":
         profile_pic = request.FILES["img"]
         profile_name = request.POST.get("name")
-        profile_phone = request.POST.get("number")
-        
-        new_profile = Profile(
+        profile_number = request.POST.get("phone")
+    
+        info = Profile(
             img = profile_pic,
             name = profile_name,
-            number = profile_phone
+            number = profile_number
         )
-        new_profile.save()
+        
+        
+        info.save()
+        return redirect("profile")
+    
+    return render(request,"creat_profile.html")
+    
+
+# ======================== update profile form ==============================
+
+def update_profile_form(request,info_id):
+    
+    profile = Profile.objects.get(id = info_id)
+    
+    if request.method == "POST":
+        profile.img = request.FILES["img"]
+        profile.name = request.POST.get("name")
+        profile.number = request.POST.get("number")
+      
+        profile.save()
         
         return redirect("profile")
         
     
-    return render(request,"profile_form.html")
+    return render(request,"update_profile.html")
 
 
 # ======================= profile ==============================
