@@ -1,32 +1,53 @@
-{% extends "base.html" %}
-{% load static %}
+<!DOCTYPE html>
+<html lang="en">
 
-{% block title %}
-home
-{% endblock  %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>ToDo App</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
 
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">ToDo App</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item mx-1">
+                    <a class="btn btn-primary" href="{% url 'login' %}">Login</a>
+                </li>
+                <li class="nav-item mx-1">
+                    <a class="btn btn-warning" href="{% url 'register' %}">Register</a>
+                </li>
 
-{% block link %}
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="{% static "css/base.css" %}">
-{% endblock  %}
-
-
-{% block body %}
-    
-        <!-- About Section -->
-        <div id="about" class="text-center mt-5">
-            <div class="container">
-                <h2>Taskify</h2>
-                <p class="lead">Taskify is designed to help you manage your daily tasks efficiently. </p>
-            </div>
+            </ul>
         </div>
-        
-        <!-- Hero Section -->
-        <div class="hero-section">
-            <h1>Welcome to Taskify</h1>
-            <p>Your Ultimate To-Do App to Boost Productivity</p>
-            <a href="{% url 'todo' %}" class="btn btn-primary btn-lg">Start</a>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="jumbotron text-center">
+            <h1 class="display-4">Welcome to My ToDo App</h1>
+            <p class="lead">Your simple and efficient task management tool.</p>
+            <hr class="my-4">
+            <a class="btn btn-primary btn-lg" href="{% url 'login' %}" role="button">Get Started</a>
         </div>
-        
-{% endblock  %}
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer bg-light text-center py-3">
+        <div class="container">
+            <span class="text-muted">&copy; 2024 ToDo App. All rights reserved.</span>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
