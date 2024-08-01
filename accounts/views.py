@@ -13,6 +13,7 @@ def login(request):
         user = auth.authenticate(username = user_name , password = user_pass)
         
         if user is not None:
+            auth.login(request,user)
             return redirect("todo")
         else:
             return redirect("home")
