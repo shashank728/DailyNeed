@@ -1,5 +1,6 @@
 from django.shortcuts import render,redirect
 
+
 from .models import Todo,Profile
 # Create your views here.
 
@@ -11,14 +12,18 @@ def home(request):
 
 # ==================== todo =================================
 def todo(request):
+    user = request.user
     todo = Todo.objects.all()
-    incompleted_todos = todo.filter(complete = False)
-    completed_todos = todo.filter(complete = True)
+    incompleted_todos = todo.filter(complete = False,user=user)
+    completed_todos = todo.filter(complete = True,user=user)
+    
     
 
     parameter = {
         "todos":incompleted_todos,
-        "completed":completed_todos
+        "completed":completed_todos,
+        "user":user,
+        
     }
     return render(request,"todo.html",parameter)
 
@@ -27,12 +32,14 @@ def todo(request):
 # =================== add todo =============================
 def addtodo(request):
     if request.method == "POST":
+        
         user_task = request.POST.get("task")
         user_quantity = request.POST.get("quantity")
         
         new_todo = Todo(
             task = user_task,
-            quantity = user_quantity   
+            quantity = user_quantity,
+            user = request.user,
         )
         new_todo.save()
         return redirect("todo")

@@ -33,7 +33,7 @@ def register(request):
                 username = user_name
             )
             
-            new_user.set_password("user_pass")
+            new_user.set_password(user_pass)
             new_user.save()
             
             return redirect("login")
